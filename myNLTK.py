@@ -27,7 +27,7 @@ print percentage(text4.count("a"),len(text4))
 #----------------------------------------1.2
 #文本即为链表，可由索引找到单词
 sent1=['call','me','Ishmeal','.']
-print sent1.append("momo")
+print sent1.append("momo") #无法输出
 print sent1
 print sent1[0] 
 #m:n选中的是索引为m...n-1,当省略时前者默认为链表首，后者为链表尾
@@ -35,3 +35,11 @@ print sent1[1:4]
 #单词在文本中的第一个索引
 print sent1.index("me")
 sent1[0]='funk'
+#变量赋值/变量名以字母开头，可以包含数字字母下划线
+my_sent=["Bravely",'bord',"sir",'Robin',',','rode','forth','from','camelot']
+print my_sent
+noun_phrase=my_sent[1:4]
+print noun_phrase
+my_word=sorted(noun_phrase)  #排序表大写在小写之前
+print my_word
+
