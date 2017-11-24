@@ -101,7 +101,7 @@ print sorted(w for w in set(text5) if len(w)>7 and fdist5[w]>7)
 #词语搭配和双连词 
 '''
 print bigrams(['more','is','said','than','done'])		#<generator object bigrams at 0x0284A8F0> 
-print list(bigrams(['more','is','said','than','done']))	#书上会出现上面问题 按照网上添加list（）
+print list(bigrams(['more','is','said','than','done']))	#!书上会出现上面问题 按照网上添加list（）
 text4.collocations()									#出现频率比预期频率更频繁的双联词
 '''
 #计算其它东西
@@ -173,3 +173,35 @@ for word in tricky:
 '''
 #----------------------------------------1.5自动理解自然语言
 #词意消歧
+#指代消解
+#自动生成语言
+#机器翻译
+#babelize_shell()					#!该模块已经不再提供
+#人机对话系统
+#----------------------------------------1.6小结
+#P35
+#----------------------------------------1.7深入阅读
+#介绍书籍
+#----------------------------------------1.8练习
+
+#6
+text2.dispersion_plot(['Elinor','Marianne','Edward','Willoughby'])
+#7
+text5.collocations()
+#9
+my_string='word miss'
+print my_string
+print my_string*3					#不会加空格
+#10
+my_sent=['mu','shit']
+print ''.join(my_sent)
+print ''.join(my_sent).split('u',1)
+#12
+print 'monty python'[6:12]
+print ['monty','python'][1]
+#13
+print sent1[2][2]
+#15
+for word in sorted(set(text5)):
+	if word.startswith('b'):
+		print word
