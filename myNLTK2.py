@@ -34,7 +34,7 @@ chatroom=nps_chat.posts('10-19-20s_706posts.xml')
 print chatroom[123]
 '''
 #布朗语料库
-
+'''
 from nltk.corpus import brown
 print brown.categories()
 print brown.words(categories='news')
@@ -45,7 +45,30 @@ fdist=nltk.FreqDist([w.lower() for w in news_text])
 modals=['can','could','may','might','must','will']
 for m in modals:
 	print m +":",fdist[m],
-cfd=nltk.ConditionalFreqDist((genre,word) ,for genre in brown.categories() for word in brown.word(categories=genre))
+cfd=nltk.ConditionalFreqDist((genre,word)  						#此处函数不会语法错误
+	for genre in brown.categories() 
+	for word in brown.word(categories=genre))
 genres=['news','religion','hobbies','science_fiction','romance','humor']
 #modals=['can','could','may','might','must','will']
 cfd.tabulate(Conditionals=genres,samples=modals) 
+'''
+#路透社语料库
+'''
+from nltk.corpus import udhr
+raw_text=udhr.raw('javanese-Latin1')
+nltk.FreqDist(raw_text).plot()
+'''
+#----------------------------------------2.2条件概率分布
+#----------------------------------------2.3python代码重用
+def plural(word):
+	if word.endswith('y'):
+		return word[:-1]+'ies'
+	elif word[-1] in 'sx' or word [-2:] in ['sh','ch']:
+		return word+'es'
+	elif word.endswith("an"):
+		return word[:-2]+'en'
+	else:
+		return word+"s"
+print plural('word')
+print plural('worry')
+print plural("fan")
