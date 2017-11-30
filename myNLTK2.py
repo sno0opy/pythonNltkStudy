@@ -60,6 +60,7 @@ nltk.FreqDist(raw_text).plot()
 '''
 #----------------------------------------2.2条件概率分布
 #----------------------------------------2.3python代码重用
+'''
 def plural(word):
 	if word.endswith('y'):
 		return word[:-1]+'ies'
@@ -72,3 +73,12 @@ def plural(word):
 print plural('word')
 print plural('worry')
 print plural("fan")
+'''
+#----------------------------------------2.5WordNet
+#意义与同义词
+from nltk.corpus import wordnet as wn
+print wn.synsets('motorcar')
+print wn.synset('car.n.01').lemma_names
+print wn.synset('car.n.01').examples
+print wn.synset('car.n.01').definition
+print wn.synset('car.n.01').lemmas

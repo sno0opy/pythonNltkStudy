@@ -191,7 +191,7 @@ text5.collocations()
 #9
 my_string='word miss'
 print my_string
-print my_string*3					#不会加空格
+print my_string,*3					#不会加空格
 #10
 my_sent=['mu','shit']
 print ''.join(my_sent)
