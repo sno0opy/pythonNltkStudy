@@ -136,3 +136,17 @@ del beatles[-1]
 print(beatles)
 #query[0]="F"							#会报错因为字符串不可变
 '''
+#----------------------------------------3.3使用Unicode进行文字处理
+'''
+path=nltk.data.find('corpora/unicode_samples/polish-lat2.txt')
+import codecs
+f=codecs.open(path,encoding='latin2')	#将编码文件以unicode读入
+for line in f:
+	line=line.strip()
+	print(line.encode("unicode_escape"))
+f=codecs.open(path,'w',encoding="utf-8")#在文件中写入unicode
+'''
+#----------------------------------------3.4使用正则表达式
+import re 
+wordlist=[w for w in nltk.corpus.words.words('en') if w.islower()]
+print([w for w in wordlist if re.search('ed$',w)])
